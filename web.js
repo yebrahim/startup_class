@@ -4,9 +4,6 @@ var fs = require('fs');
 app.use(express.logger());
 
 app.configure(function () {
-    app.set('port', process.env.PORT || 3000);
-    app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
-    app.use(express.bodyParser()),
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
