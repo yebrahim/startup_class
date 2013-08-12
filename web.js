@@ -1,12 +1,11 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-var path = require('path'),
-// app.use(express.logger());
+var path = require('path');
 
-app.configure(function () {
-    app.use(express.static(path.join(__dirname, 'public')));
-});
+app.use(express.logger());
+
+app.use('/public',express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
     var html = fs.readFileSync('index.html').toString();
