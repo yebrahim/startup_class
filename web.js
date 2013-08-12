@@ -6,6 +6,7 @@ var path = require('path');
 app.use(express.logger());
 
 app.use('/public',express.static(__dirname + '/public'));
+app.use('/img',express.static(__dirname + '/img'));
 
 app.get('/', function(request, response) {
     var html = fs.readFileSync('index.html').toString();
